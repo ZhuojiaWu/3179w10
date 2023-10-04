@@ -35,7 +35,7 @@
   ],
   "transform": [
     {
-      "filter": "state_selection == null || datum.properties.STE_NAME21 == state_selection"
+      "filter": "state_selection == null || datum.StateorTerritory == state_selection"
     }
     
   ],

@@ -4,6 +4,7 @@
   "height": 450,
   "title": {"text":"Number of short-term residents return to Australia from 2019-2023", "fontSize":14},
   "projection": {"type": "equirectangular"},
+  
   "params": [
     {
       "name": "state_selection",
@@ -32,12 +33,11 @@
         "name": "State Selection: "
       }
     }
+    
   ],
   "transform": [
     {
-      "filter": "state_selection == null || datum.StateorTerritory == state_selection"
-    }
-    
+    "filter": "state_selection == null ||  datum.StateorTerritory == state_selection "}
   ],
   "layer": [
     {
@@ -66,7 +66,10 @@
           "type": "quantitative",
           "title": "Number of residents return"
         },
-        "opacity":{"value":0.6},
+        "opacity": {
+          "condition": {"param": "state_selection", "value": 0.4},
+          "value":1 },
+          
         "tooltip": [
           {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
           {"field": "Total", "type": "quantitative"}
